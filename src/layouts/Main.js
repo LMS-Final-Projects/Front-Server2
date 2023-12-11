@@ -6,7 +6,7 @@ import {Container} from "reactstrap";
 import AdminNavbar from "components/Navbars/AdminNavbar.js";
 import AdminFooter from "components/Footers/AdminFooter.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
-import routes from "../routes/routes.js";
+import sidebarRoutes from "../routes/sidebarRoutes.js";
 
 const Main = (props) => {
     const mainContent = React.useRef(null);
@@ -25,12 +25,12 @@ const Main = (props) => {
     };
 
     const getBrandText = (path) => {
-        for (let i = 0; i < routes.length; i++) {
+        for (let i = 0; i < sidebarRoutes.length; i++) {
             if (
-                props?.location?.pathname.indexOf(routes[i].layout + routes[i].path) !==
+                props?.location?.pathname.indexOf(sidebarRoutes[i].layout + sidebarRoutes[i].path) !==
                 -1
             ) {
-                return routes[i].name;
+                return sidebarRoutes[i].name;
             }
         }
         return "Brand";
@@ -45,7 +45,7 @@ const Main = (props) => {
         <>
             <Sidebar
                 {...props}
-                routes={routes}
+                routes={sidebarRoutes}
                 logo={{
                     innerLink: "/index",
                     imgSrc: require("../assets/img/brand/playdata.png"),
@@ -59,7 +59,7 @@ const Main = (props) => {
                     brandText={getBrandText(props?.location?.pathname)}
                 />
                 <Routes>
-                    {getRoutes(routes)}
+                    {getRoutes(sidebarRoutes)}
                     <Route path="*" element={<Navigate to="/index" replace/>}/>
                 </Routes>
                 <Container fluid>

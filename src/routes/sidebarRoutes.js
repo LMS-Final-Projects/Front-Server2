@@ -2,12 +2,10 @@
 import Index from "../pages/Index.js";
 import Profile from "../pages/Profile.js";
 import Maps from "../pages/Maps.js";
-import Register from "../pages/Register.js";
-import Login from "../pages/Login.js";
 import Tables from "../pages/Tables.js";
 import Icons from "../pages/Icons.js";
 
-const routes = [
+const sidebarRoutes = [
   {
     path: "/index",
     name: "Dashboard",
@@ -75,19 +73,5 @@ const routes = [
     component: <Tables />,
     layout: "",
   },
-  {
-    path: "/login",
-    name: "Login",
-    icon: "ni ni-key-25 text-info",
-    component: <Login />,
-    layout: "/auth",
-  },
-  {
-    path: "/register",
-    name: "Register",
-    icon: "ni ni-circle-08 text-pink",
-    component: <Register />,
-    layout: "/auth",
-  },
 ];
-export default routes;
+export default sidebarRoutes;

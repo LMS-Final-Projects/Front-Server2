@@ -8,7 +8,7 @@ import { Container, Row, Col } from "reactstrap";
 import AuthNavbar from "components/Navbars/AuthNavbar.js";
 import AuthFooter from "components/Footers/AuthFooter.js";
 
-import routes from "../routes/routes.js";
+import sidebarRoutes from "../routes/sidebarRoutes.js";
 
 const Auth = (props) => {
   const mainContent = React.useRef(null);
@@ -76,7 +76,7 @@ const Auth = (props) => {
         <Container className="mt--8 pb-5">
           <Row className="justify-content-center">
             <Routes>
-              {getRoutes(routes)}
+              {getRoutes(sidebarRoutes)}
               <Route path="*" element={<Navigate to="/auth/login" replace />} />
             </Routes>
           </Row>
